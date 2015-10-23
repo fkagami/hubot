@@ -2,7 +2,7 @@ cronJob = require('cron').CronJob
 to_json = require('xmljson').to_json
 request = require 'request'
 module.exports = (robot) ->
-  new cronJob '00 30 09,12,15,18 * * 1-5', () =>
+  robot.hear /はてぶみたい/, (msg) ->
     url = "http://b.hatena.ne.jp/hotentry/it.rss"
     options =
       url: url
